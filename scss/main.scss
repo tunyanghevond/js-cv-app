@@ -1,0 +1,87 @@
+@import "variables";
+@import "mixins";
+
+* {
+  margin: 0;
+  font-family: sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main_container {
+  background-color: rgb(238, 238, 238);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr 150px;
+  gap: 20px;
+  min-height: 100vh;
+  grid-template-areas:
+    "left_column work_experience"
+    "left_column education"
+    "footer footer";
+}
+
+.left_column {
+  grid-area: left_column;
+  background-color: $bg-color;
+  @include box-shadow(1px, 2px, 9px, #333);
+  .percent {
+    @include percent(2px, $icon-color);
+  }
+  .display-container {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    h1 {
+      position: absolute;
+      bottom: 0;
+      padding: 20px;
+    }
+  }
+  .container {
+    @include icon-space($icon-color, $bg-color, $text-color);
+  }
+}
+
+.work_experience {
+  grid-area: work_experience;
+  background-color: $bg-color;
+  @include box-shadow(1px, 2px, 9px, #333);
+  padding: 0 20px;
+  h2 {
+    i {
+      @include icons($icon-color, $font-size: 40px);
+    }
+  }
+}
+@include work-discripton($text-color, $icon-color);
+i {
+  @include icons($icon-color, $font-size);
+}
+
+.education {
+  grid-area: education;
+  background-color: $bg-color;
+  padding: 0 20px;
+  @include box-shadow(1px, 2px, 9px, #333);
+  h2 {
+    i {
+      @include icons($icon-color, $font-size: 40px);
+    }
+  }
+  @include work-discripton($text-color, $icon-color);
+  i {
+    @include icons($icon-color, $font-size);
+  }
+}
+
+.footer {
+  grid-area: footer;
+  background-color: $icon-color;
+  color: $bg-color;
+  text-align: center;
+  @include footer();
+}
+@import "mediaquery";

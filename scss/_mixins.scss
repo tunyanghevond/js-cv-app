@@ -1,0 +1,88 @@
+@mixin percent($padding, $backgroundColor, $color: white, $fontSize: 15px) {
+  margin: 10px;
+  border-radius: $percentRadius;
+  box-sizing: border-box;
+  background-color: #f1f1f1;
+  .percent_value {
+    width: 50%;
+    display: inline-block;
+    border-radius: $percentRadius;
+    color: $color;
+    padding: $padding;
+    font-size: $fontSize;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: $backgroundColor;
+  }
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin icon-space($icon-color, $bg-color, $txt-color) {
+  background-color: $bg-color;
+  color: $txt-color;
+  font-size: 20px;
+  padding: 0 30px;
+  p {
+    margin: 20px 0;
+  }
+  i {
+    @include icons($icon-color, $font-size);
+  }
+}
+@mixin icons($icon-color, $font-size: 25px) {
+  margin: 0 10px;
+  color: $icon-color;
+  font-size: $font-size;
+}
+@mixin work-discripton($text-color, $icon-color) {
+  h2 {
+    padding: 20px 0px;
+    font-size: 32px;
+    color: $text-color;
+  }
+  aside {
+    padding: 0 15px;
+    font-size: 20px;
+    h5 {
+      margin: 14px 0;
+      color: $text-color;
+    }
+    h6 {
+      font-size: 25px;
+      span {
+        margin: 0 20px;
+        color: $icon-color;
+      }
+      small {
+        color: white;
+        padding: 10px;
+        background-color: $icon-color;
+      }
+    }
+    p {
+      margin: 20px 0;
+    }
+  }
+}
+@mixin footer() {
+  p {
+    margin: 15px 0;
+  }
+
+  i {
+    color: $bg-color;
+    margin: 15px 0;
+  }
+  a {
+    color: $bg-color;
+    margin: 15px 0;
+  }
+}
