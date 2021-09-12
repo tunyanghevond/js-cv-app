@@ -7,14 +7,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  background-color: $text-color;
+}
 .main_container {
   background-color: rgb(238, 238, 238);
+  width: 90%;
+  margin: 0 auto;
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr 150px;
   gap: 20px;
+
   min-height: 100vh;
   grid-template-areas:
     "left_column work_experience"
@@ -38,6 +43,7 @@
       position: absolute;
       bottom: 0;
       padding: 20px;
+      color: white;
     }
   }
   .container {
@@ -65,6 +71,7 @@ i {
   grid-area: education;
   background-color: $bg-color;
   padding: 0 20px;
+
   @include box-shadow(1px, 2px, 9px, #333);
   h2 {
     i {
@@ -78,6 +85,7 @@ i {
 }
 
 .footer {
+  @include box-shadow(1px, 2px, 9px, #333);
   grid-area: footer;
   background-color: $icon-color;
   color: $bg-color;
